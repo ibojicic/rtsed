@@ -70,6 +70,21 @@ Options:
   --help                Show this message and exit.
 ```
 
+The output file is in the .csv format and contain columns: 
+- *id* id of the object (as in the input file)
+- *model* applied model (sphshell or plshell, see paper for more details)
+- *Te* used electron temperature in K
+- *mu* used ratio between inner and outer radiii i.e. Rin/Rout
+- *theta_start* initial angular diameter in arcsec
+- *freq_0_start* initial turnover frequency in GHz 
+- *theta* fitted diameter in arcsec
+- *freq_0* fitted turnover frequency in GHz
+- *theta_err* uncertainty in *theta*
+- *freq_0_err* uncertainty in *freq_0*
+- *nrmse, smape, mape, mse, redchisqg, r_squared...* metrics, see forecasting_metrics.py 
+- *n_points* number of data points used in the fit
+- *time_in* run time
+
 For plotting of the fitted SED you can use rtplot script:
 
 ```
