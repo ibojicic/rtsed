@@ -1,14 +1,10 @@
-from importlib import reload
 import pandas as pd
 import plotnine as gg
-
-import ggPlots
-import thermal_sed
-
-ggPlots = reload(ggPlots)
+from rtsed.rtsed.ggPlots import  ggPlots
+from rtsed.rtsed import thermal_sed
 
 
-class PlotSed(ggPlots.ggPlots):
+class PlotSed(ggPlots):
 
     def __init__(self):
         super().__init__()

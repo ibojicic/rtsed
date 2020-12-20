@@ -1,14 +1,14 @@
 import click
-import common_fncts as cf
-import PlotSed
+import rtsed.rtsed.common_fncts as cf
+from rtsed.rtsed.PlotSed import PlotSed
 import numpy as np
 
 models_config = {
-    'sphshell'     : {
+    'sphshell': {
         'lntp'    : '-',
         'clr'     : '#990000',
         'plt_conf': True},
-    'plshell': {
+    'plshell' : {
         'lntp'    : 'dashdot',
         'clr'     : '#006600',
         'plt_conf': False}
@@ -18,9 +18,8 @@ models_config = {
 @click.command()
 @click.argument('input_file', nargs=1)
 @click.argument('results_file', nargs=1)
-@click.option('--out_format', '-f', default='png', help="Format of the output (default is png).")
+@click.option('--out_format', '-f', default='png', help="Format of the output file (default is png).")
 def cli(input_file, results_file, out_format):
-
     df_data = cf.read_input_file(input_file)
 
     df_results = cf.read_input_file(results_file)
@@ -30,11 +29,10 @@ def cli(input_file, results_file, out_format):
 
         data_radio = df_data[df_data.id == curr_id]
 
-        newnewplot = PlotSed.PlotSed()
+        newnewplot = PlotSed()
         newnewplot.set_config_pars(xlabel='Freq (GHz)', ylabel='Flux (mJy)')
         newnewplot.set_limits_on_data(data_radio.freq, data_radio.flux)
         newnewplot.plt_data_points(data_radio, True)
-
 
         for mdl in df_results.model:
             fit_results = df_results.loc[
@@ -51,4 +49,3 @@ def cli(input_file, results_file, out_format):
         newnewplot.save_plot(newnewplot.plot_out(),
                              "{}_sed.{}".format(
                                  curr_id, out_format))
-

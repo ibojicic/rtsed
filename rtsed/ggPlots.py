@@ -1,7 +1,7 @@
 import pandas as pd
 import plotnine as gg
 import numpy as np
-from common_fncts import diff_keys
+from rtsed.rtsed.common_fncts import diff_keys
 
 
 class ggPlots:
@@ -188,33 +188,6 @@ class ggPlots:
 
         return setup
 
-    def loglin_ggplot(self):
-        setup = gg.ggplot(self.base_data) + \
-                gg.scale_x_log10() + \
-                gg.scale_y_continuous() + \
-                gg.annotation_logticks(sides="tb",
-                                       lengths=(3 * self.config['logtick_length'],
-                                                2 * self.config['logtick_length'],
-                                                1 * self.config['logtick_length'])) + \
-                gg.theme_bw(base_family=self.config['font']) + \
-                gg.labs(x=self.config['xlabel'], y=self.config['ylabel']) + \
-                gg.theme(
-                    axis_ticks_direction_y=self.config['lintick_drct'],
-                    axis_ticks_major_x=gg.element_blank(),
-                    axis_ticks_minor_x=gg.element_blank(),
-                    panel_grid_minor=gg.element_blank(),
-                    panel_grid_major=gg.element_blank(),
-                    axis_text=gg.element_text(size=self.config['axis_text_size']),
-                    axis_title=gg.element_text(size=self.config['axis_title_size']),
-                    legend_position=self.config['legend_pos'],
-                    legend_text=gg.element_text(size=self.config['legend_text_size']),
-                    strip_background=gg.element_rect(colour="white", fill="white"),
-                    panel_spacing=0,
-                    panel_border=gg.element_rect(colour="black", fill=None, size=1),
-                    axis_line=gg.element_line(colour="black", size=1, linetype="solid")) + \
-                gg.coord_cartesian(xlim=self.xlimits, ylim=self.ylimits)
-
-        return setup
 
     def plot_out(self):
         setup = self.baseplot()

@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 
+
 def read_input_file(input_file):
     try:
         input_data = pd.read_csv(input_file)
@@ -11,8 +12,6 @@ def read_input_file(input_file):
     return input_data
 
 
-
-
 def merge_dicts(dicts):
     """Given list of dicts, merge them into a new dict as a shallow copy.
     :param dicts: list of dictionaries
@@ -20,7 +19,7 @@ def merge_dicts(dicts):
     """
     out_dict = {}
     for current_dict in dicts:
-        if not isinstance(current_dict,dict):
+        if not isinstance(current_dict, dict):
             continue
         out_dict = out_dict.copy()
         try:

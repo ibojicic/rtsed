@@ -1,6 +1,7 @@
 import click
-import common_fncts as cf
-from InOutFit import InOutFit
+from rtsed.rtsed import common_fncts as cf
+from rtsed.rtsed.InOutFit import InOutFit
+from rtsed.rtsed import thermal_sed
 import pandas as pd
 
 
@@ -40,6 +41,5 @@ def cli(input_file, results_file, models, defunc, te, mu):
             fitter.run_fit(absolute_sigma=True)
             result = fitter.full_results
             full_result = full_result.append(pd.DataFrame([result.values()], columns=result.keys()))
-
 
     full_result.to_csv(results_file, index=False)
