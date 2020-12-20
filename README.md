@@ -46,16 +46,10 @@ should produce two png images ('389_sed.png' and '580_sed.png') in the current f
 
 ## Author
 
-* **Ivan Bojicic** 
+**Ivan Bojicic** 
 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details
 
