@@ -82,7 +82,7 @@ Options:
 
 ## Author
 
-**Ivan Bojicic** 
+**Ivan Bojicic** <qbocko@gmail.com> or <i.bojicic@westernsydney.edu.au>
 
 
 ## License
