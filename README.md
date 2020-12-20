@@ -95,6 +95,12 @@ Options:
   --help                 Show this message and exit.
 ```
 
+The output of the sedplot should be SED plots containing data points and fits. For example:
+
+![](/tests/389_sed.png)
+
+where red solid line is sphshell model and green dash-dotted line is the plshell model. The pink area represents the 90% confidence interval for the sphshell model.
+
 ## Author
 
 **Ivan Bojicic** <qbocko@gmail.com> or <i.bojicic@westernsydney.edu.au>
