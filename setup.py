@@ -15,7 +15,7 @@ setup(
     python_requires='>=3.6',
     entry_points={
         'console_scripts': [
-            'rtsed=rtsed.rtsed.rtsed:cli',
-            'rtplot=rtsed.rtsed.rtsed_plot:cli'
+            'rtsed=rtsed.rtsed:cli',
+            'rtplot=rtsed.rtsed_plot:cli'
         ]},
 )
