@@ -1,7 +1,7 @@
 import pandas as pd
 import plotnine as gg
 import numpy as np
-from rtsed.rtsed.common_fncts import diff_keys
+from rtsed.common_fncts import diff_keys
 
 
 class ggPlots:
