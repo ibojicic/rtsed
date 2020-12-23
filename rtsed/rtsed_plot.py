@@ -1,6 +1,6 @@
 import click
-import rtsed.rtsed.common_fncts as cf
-from rtsed.rtsed.PlotSed import PlotSed
+import rtsed.common_fncts as cf
+from rtsed.PlotSed import PlotSed
 import numpy as np
 
 models_config = {
