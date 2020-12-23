@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 from scipy.stats.distributions import t
 from scipy.optimize import curve_fit
-from rtsed.rtsed.common_fncts import merge_dicts
+from rtsed.common_fncts import merge_dicts
 from datetime import datetime
-import rtsed.rtsed.forecasting_metrics as fm
+import rtsed.forecasting_metrics as fm
 from random import uniform
-from rtsed.rtsed import thermal_sed
+from rtsed import thermal_sed
 
 
 class InOutFit:
