@@ -1,7 +1,7 @@
 import pandas as pd
 import plotnine as gg
-from rtsed.rtsed.ggPlots import  ggPlots
-from rtsed.rtsed import thermal_sed
+from rtsed.ggPlots import  ggPlots
+from rtsed import thermal_sed
 
 
 class PlotSed(ggPlots):
