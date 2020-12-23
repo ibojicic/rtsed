@@ -7,6 +7,7 @@ setup(
     author_email="qbocko@gmail.com",
     description="Radio continuum SED fitter.",
     py_modules=['rtsed'],
+    packages=['rtsed'],
     install_requires=[
         'click', 'plotnine', 'pandas',
         'scikit-learn', 'scipy', 'numpy'
