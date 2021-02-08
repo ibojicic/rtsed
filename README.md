@@ -1,7 +1,5 @@
 # rtsed
 
-# Project Title
-
 Radio-continuum spectral energy distribution (SED) fitter.
 
 ### Prerequisites
