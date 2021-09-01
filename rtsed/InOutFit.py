@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 from scipy.stats.distributions import t
 from scipy.optimize import curve_fit
-from rtsed.rtsed.common_fncts import merge_dicts
+from common_fncts import merge_dicts
 from datetime import datetime
-import rtsed.rtsed.forecasting_metrics as fm
+import forecasting_metrics as fm
 from random import uniform
-from rtsed.rtsed import thermal_sed
+import thermal_sed
 
 
 class InOutFit:
@@ -14,8 +14,8 @@ class InOutFit:
     _def_init_diam = 1.
     _def_bounds = (1.e-6, [1.e4, 30])
 
-    def __init__(self, id, fit_parameters):
-        self._id = id
+    def __init__(self, obj_id, fit_parameters):
+        self._id = obj_id
         self._params = fit_parameters
         self._xdata = None
         self._ydata = None

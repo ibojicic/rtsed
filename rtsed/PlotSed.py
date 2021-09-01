@@ -1,14 +1,14 @@
 import pandas as pd
 import plotnine as gg
-from rtsed.rtsed.ggPlots import  ggPlots
-from rtsed.rtsed import thermal_sed
+
+import thermal_sed
+from ggPlots import ggPlots
 
 
 class PlotSed(ggPlots):
 
     def __init__(self):
         super().__init__()
-
 
     def plt_data_points(self, data, plot_err_bars=False):
         self.elements = gg.geom_point(data, gg.aes(x="freq", y="flux"),
@@ -21,8 +21,8 @@ class PlotSed(ggPlots):
 
         return self
 
-
-    def plt_error_bars(self, data):
+    @staticmethod
+    def plt_error_bars(data):
         # set error bar limits
         inp_data = data.copy()
         inp_data['ymin'] = inp_data['flux'] - inp_data['flux_err']
@@ -49,8 +49,8 @@ class PlotSed(ggPlots):
 
         return self
 
-
-    def plt_thermal_sed_confidence(self, xdata, fitted_pars, fitted_err, clr):
+    @staticmethod
+    def plt_thermal_sed_confidence(xdata, fitted_pars, fitted_err, clr):
 
         if fitted_err is None:
             return
@@ -70,7 +70,6 @@ class PlotSed(ggPlots):
 
         data = pd.DataFrame({"x": xdata, "y_min": y_min, "y_max": y_max})
         return gg.geom_ribbon(data, gg.aes(x=xdata, ymin=y_min, ymax=y_max), fill=clr, alpha=0.05)
-
 
     def plot_pwr_law(self, xdata, intersect, power, **kwargs):
         x = self.freq_points(xdata, no_points=2)

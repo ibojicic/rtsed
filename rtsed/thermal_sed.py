@@ -1,5 +1,6 @@
-import numpy as np
 import math
+
+import numpy as np
 import scipy.integrate as integrate
 
 C_k = 1.3806504E-23  # J K^-1
@@ -19,10 +20,10 @@ def flux_nu(freq, theta, freq_0, mu, Te, model):
     """
     # correction for geometry
     corrections = {
-        "cylindrical"    : 1,
-        "spherical"      : 1,
-        "plshell"  : 8. / 3. - 2 * mu,
-        "sphshell"       : 1 - mu
+        "cylindrical": 1,
+        "spherical"  : 1,
+        "plshell"    : 8. / 3. - 2 * mu,
+        "sphshell"   : 1 - mu
     }
 
     if model not in corrections.keys():
@@ -144,6 +145,7 @@ def tauFromTau_c(nu, nu_c, tau_c=1.):
     tau = tau_c * np.power(nu / nu_c, -2.1)
 
     return tau
+
 
 def solidAngle_ap(theta):
     '''solid angle from angular diameter

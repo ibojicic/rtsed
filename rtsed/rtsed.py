@@ -1,7 +1,6 @@
 import click
-from rtsed.rtsed import common_fncts as cf
-from rtsed.rtsed.InOutFit import InOutFit
-from rtsed.rtsed import thermal_sed
+import common_fncts as cf
+from InOutFit import InOutFit
 import pandas as pd
 
 

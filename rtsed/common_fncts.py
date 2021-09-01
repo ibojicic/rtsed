@@ -1,4 +1,5 @@
 import sys
+
 import pandas as pd
 
 
@@ -27,6 +28,16 @@ def merge_dicts(dicts):
         except:
             print('error append dict')
     return out_dict
+
+
+def without_keys(inp_dict, keys):
+    """
+    return dictionary without specific keys
+    :param inp_dict: dictionary
+    :param keys: list of keys to be excluded
+    :return:
+    """
+    return {x: inp_dict[x] for x in inp_dict if x not in keys}
 
 
 def diff_keys(dict1, dict2):
