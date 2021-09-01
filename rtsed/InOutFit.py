@@ -6,7 +6,7 @@ from .common_fncts import merge_dicts
 from datetime import datetime
 import rtsed.forecasting_metrics as fm
 from random import uniform
-import thermal_sed
+import rtsed.thermal_sed as ts
 
 
 class InOutFit:
@@ -29,7 +29,7 @@ class InOutFit:
         self.fit_errors = None
         self.fit_pcov = None
         self.metrics = None
-        self._fitter = thermal_sed.flux_nu
+        self._fitter = ts.flux_nu
         self._beams = None
         self._bounds = self._def_bounds
 

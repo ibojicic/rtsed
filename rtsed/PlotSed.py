@@ -1,7 +1,7 @@
 import pandas as pd
 import plotnine as gg
 
-import thermal_sed
+import rtsed.thermal_sed as ts
 from .ggPlots import ggPlots
 
 
@@ -37,7 +37,7 @@ class PlotSed(ggPlots):
 
     def plt_thermal_sed(self, xdata, fitted_pars, lntp="-", clr='black', plt_conf=False, fitted_err=None):
         x = self.freq_points(xdata, no_points=50)
-        y = thermal_sed.flux_nu(x, **fitted_pars)
+        y = ts.flux_nu(x, **fitted_pars)
         data = pd.DataFrame({"x": x, "y": y})
         self.elements = gg.geom_line(data, gg.aes(x=x, y=y),
                                      linetype=lntp,
@@ -61,12 +61,12 @@ class PlotSed(ggPlots):
 
         fitted_pars_max['theta'] = fitted_pars_max['theta'] + fitted_err['theta_err'] * 1.645
         fitted_pars_max['freq_0'] = fitted_pars_max['freq_0'] + fitted_err['freq_0_err'] * 1.645
-        y_max = thermal_sed.flux_nu(xdata, **fitted_pars_max)
+        y_max = ts.flux_nu(xdata, **fitted_pars_max)
 
         fitted_pars_min = fitted_pars.copy()
         fitted_pars_min['theta'] = fitted_pars_min['theta'] - fitted_err['theta_err'] * 1.645
         fitted_pars_min['freq_0'] = fitted_pars_min['freq_0'] - fitted_err['freq_0_err'] * 1.645
-        y_min = thermal_sed.flux_nu(xdata, **fitted_pars_min)
+        y_min = ts.flux_nu(xdata, **fitted_pars_min)
 
         data = pd.DataFrame({"x": xdata, "y_min": y_min, "y_max": y_max})
         return gg.geom_ribbon(data, gg.aes(x=xdata, ymin=y_min, ymax=y_max), fill=clr, alpha=0.05)
