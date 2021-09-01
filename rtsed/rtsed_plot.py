@@ -1,5 +1,5 @@
 import click
-import .common_fncts as cf
+import rtsed.common_fncts as cf
 from .PlotSed import PlotSed
 import numpy as np
 
