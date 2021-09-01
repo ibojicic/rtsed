@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats.distributions import t
 from scipy.optimize import curve_fit
-from common_fncts import merge_dicts
+from .common_fncts import merge_dicts
 from datetime import datetime
 import forecasting_metrics as fm
 from random import uniform

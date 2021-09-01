@@ -2,7 +2,7 @@ import pandas as pd
 import plotnine as gg
 
 import thermal_sed
-from ggPlots import ggPlots
+from .ggPlots import ggPlots
 
 
 class PlotSed(ggPlots):

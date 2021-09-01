@@ -1,6 +1,6 @@
 import click
 from . import common_fncts as cf
-from InOutFit import InOutFit
+from .InOutFit import InOutFit
 import pandas as pd
 
 
