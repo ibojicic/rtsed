@@ -1,5 +1,6 @@
 click
-scikit-learn
+pandas
+scikit
 scipy
 setuptools
 numpy
