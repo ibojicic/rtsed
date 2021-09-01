@@ -1,5 +1,5 @@
 import click
-import common_fncts as cf
+from . import common_fncts as cf
 from InOutFit import InOutFit
 import pandas as pd
 
